@@ -1,0 +1,388 @@
+/* Header Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 2px solid #007b7f;
+  z-index: 1000; /* Ensures the header stays on top */
+}
+
+/* Header Left - Buttons */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-btn {
+  padding: 10px;
+  background-color: #c5f6ff;
+  color: #007b7f;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.header-btn:hover {
+  background-color: #a4dff3;
+}
+
+.header-btn span.material-icons {
+  font-size: 20px;
+}
+
+/* Profile Icon Container */
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.profile-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.profile-name {
+  font-size: 16px;
+  color: #333;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  font-weight: bold;
+
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 160px;
+  z-index: 9999;
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s ease;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-menu .material-icons {
+  margin-right: 8px;
+  font-size: 18px;
+  color: #007b7f;
+}
+
+/* Show Dropdown on Hover */
+.profile-icon-container:hover + .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header-left,
+  .header-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/***********************************************
+ * TABLE CSS (For the Student Report)
+ ***********************************************/
+
+/* Container holding the table */
+/* .student-report {
+  margin: 30px auto;
+  width: 95%;
+  max-width: 1200px;
+} */
+
+/* Use separate border model to create row spacing */
+table {
+  width: 100%;
+  border-collapse: separate; 
+  border-spacing: 0 10px; /* 10px space between rows */
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  
+}
+
+thead tr {
+  background-color: #007b7f;
+  color: #fff;
+  border-radius: 8px;
+  
+}
+thead th {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  
+}
+.table-header {
+  border-radius: 8px 8px 0 0;
+}
+
+/* Each data row gets a light-blue background and spacing. */
+tbody tr {
+  background-color: #ccf8ff; /* Light blue row background */
+  border-radius: 8px;
+}
+
+/* Cells with spacing and rounding */
+tbody td {
+  padding: 12px;
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+  /* border-radius: 8px; */
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.gradee{
+  border-radius: 0 8px 8px 0;
+}
+
+/* Button styles inside table cells */
+.table-btn {
+  display: inline-block;
+  min-width: 40px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  /* You can add transition or hover effects if you like */
+}
+
+.table-btn:hover {
+  opacity: 0.9;
+}
+
+.student-name {
+  font-weight: bold;
+  text-align: left;
+  border-radius: 8px 0 0 8px;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.grade{
+  border-radius: 0 8px 8px 0;
+}
+
+/* Different color classes */
+.total-questions {
+  background-color: #007b7f;  /* teal */
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+.correct-questions {
+  background-color: #7ef7c2;  /* green */
+  color: #111;                /* black text for better contrast */
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+.incorrect-questions {
+  background-color: #ffb3b3;  /* pinkish-red */
+  color: #111;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+.skipped-questions {
+  background-color: #ffeb99;  /* yellow */
+  color: #111;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+.time-taken,
+.percentage,
+.grade {
+  color: #111;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Slightly smaller base font if desired */
+  }
+
+  /* Adjust header layout for small screens (buttons or profile might stack) */
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .header-left, .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Table columns can get squeezed, so horizontal scrolling is allowed
+     or you could go further to transform rows into "cards" if you want. */
+  thead th {
+    font-size: 14px;
+    padding: 8px;
+  }
+  tbody td {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* Buttons get smaller on very narrow screens */
+  .table-btn {
+    min-width: 30px;
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+}
+
+/* Container for the entire question details block */
+.question-details-container {
+  background-color: #fff6e8; /* Light cream background to match your example */
+  border: 2px solid #ffd79c; /* Orange-ish border */
+  border-radius: 8px;
+  padding: 15px 20px;
+  font-family: 'Comic Neue', sans-serif; /* As in your screenshot */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* space between header and body */
+}
+
+/* Top row: question on left, filter dropdown on right */
+.question-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Question Title */
+.question-title {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+/* Dropdown on the top-right */
+.question-filter select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #ffebcc; /* Light peach, to match your theme */
+  outline: none;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+font-weight: bold;
+}
+
+/* Middle row with slider and check icon */
+.question-details-body {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Arrows on left/right */
+.slider-arrow {
+  cursor: pointer;
+  font-size: 28px;
+  color: #007b7f; /* Blueish teal to match your theme */
+  user-select: none;
+  transition: color 0.2s;
+}
+.slider-arrow:hover {
+  color: #005f61;
+}
+
+/* Each image box in the slider */
+.slider-box {
+  width: 110px;
+  height: 110px;
+  border: 2px solid #ffd79c;
+  border-radius: 8px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-box img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Large green check icon on the right */
+.checkmark-icon {
+  margin-left: auto; /* pushes checkmark to the far right */
+  font-size: 58px;
+  color: #00ad63; /* green color */
+  display: flex;
+  align-items: center;
+  padding-right: 60px;
+}
+.checkmark-icon .material-icons {
+  font-size: 48px; /* bigger icon size */
+}
+
+.accordion-content {
+  display: none; /* hidden initially */
+}
+.accordion-content.open {
+  display: table-row; /* shows in table layout when .open is toggled on */
+}
+
+/* Optionally style the box inside the content */
+.accordion-box {
+  background-color: #fff6e8; /* light cream, for example */
+  border: 2px solid #ffd79c;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 5px 0;
+}

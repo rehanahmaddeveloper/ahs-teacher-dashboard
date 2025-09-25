@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Report</title>
+  <!-- Link to the external CSS file -->
+  <link rel="stylesheet" href="Report.css">
+  <!-- Material Icons (optional) -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
+  />
+</head>
+<body>
+
+  <!-- ======= HEADER SECTION ======= -->
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-left">
+      <button class="header-btn" id="homeBtn" onclick="window.location.href='./index.html';">
+        <span class="material-icons">home</span> Home
+      </button>
+      <button class="header-btn" id="browseBtn" onclick="window.location.href='./brows.html';">
+        <span class="material-icons">apps</span> Browse
+      </button>   
+    </div>
+    
+    <div class="header-right">
+      <!-- Profile Icon and Dropdown Menu -->
+      <div class="profile-icon-container" id="profileDropdown">
+        <img src="images/account profile dp.jpg" alt="Profile" class="profile-icon" />
+        <div class="profile-name">My Account ▼</div>
+        
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="./index.html">
+            <span class="material-icons">dashboard</span> My Dashboard
+          </a>
+          <a href="#">
+            <span class="material-icons">settings</span> Settings
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- ======= STUDENT REPORT TABLE ======= -->
+  <div class="student-report">
+    <table>
+      <thead>
+        <tr>
+          <th class="student-name">Student Name</th>
+          <th>Attempt Date</th>
+          <th>Total Questions</th>
+          <th>Correct Questions</th>
+          <th>Incorrect Questions</th>
+          <th>Skipped Questions</th>
+          <th>Time Taken</th>
+          <th>%</th>
+          <th class="gradee">Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- ROW 1 -->
+        <tr class="accordion-row">
+          <td class="student-name">Curio, Mario</td>
+          <td>01-15-2025</td>
+          <!-- Add 'accordion-toggle' to the clickable buttons -->
+          <td><span class="table-btn total-questions accordion-toggle">10</span></td>
+          <td><span class="table-btn correct-questions accordion-toggle">07</span></td>
+          <td><span class="table-btn incorrect-questions accordion-toggle">03</span></td>
+          <td><span class="table-btn skipped-questions accordion-toggle">01</span></td>
+          <td><span class="table-btn time-taken">20 min</span></td>
+          <td><span class="table-btn percentage">70%</span></td>
+          <td class="grade"><span class="table-btn grade">B</span></td>
+        </tr>
+        <!-- ACCORDION CONTENT: Hidden by default, spans all columns -->
+        <tr class="accordion-content">
+          <td colspan="9">
+            <!-- BEGIN QUESTION DETAILS SECTION -->
+<div class="question-details-container">
+  
+  <!-- Top row: Question on left, Dropdown on right -->
+  <div class="question-details-header">
+    <h3 class="question-title">Which of the following is a living thing?</h3>
+    
+    <div class="question-filter">
+      <select>
+        <option>All Questions</option>
+        <option>Correct Questions</option>
+        <option>Incorrect Questions</option>
+        <option>Skipped Questions</option>
+      </select>
+    </div>
+  </div>
+  
+  <!-- Middle row: Slider with images, left/right arrows, big green check on right -->
+  <div class="question-details-body">
+    <!-- Left arrow -->
+    <span class="material-icons slider-arrow arrow-left">arrow_back_ios</span>
+    
+    <!-- Slider images in separate boxes -->
+    <div class="slider-box">
+      <img src="Report page image/13261728472966.png" alt="Tree" />
+    </div>
+    <div class="slider-box">
+      <img src="Report page image/25021728472966.png" alt="Car" />
+    </div>
+    <div class="slider-box">
+      <img src="Report page image/26081728472966.png" alt="Table" />
+    </div>
+    
+    <!-- Right arrow -->
+    <span class="material-icons slider-arrow arrow-right">arrow_forward_ios</span>
+    
+    <!-- Large green check icon -->
+    <div class="checkmark-icon">
+      <span class="material-icons">check_circle</span>
+    </div>
+  </div>
+</div>
+<!-- END QUESTION DETAILS SECTION -->
+
+          </td>
+        </tr>
+
+        <!-- ROW 2 -->
+        <tr class="accordion-row table-row">
+          <td class="student-name">Ahsan</td>
+          <td>01-15-2025</td>
+          <td><span class="table-btn total-questions accordion-toggle">10</span></td>
+          <td><span class="table-btn correct-questions accordion-toggle">07</span></td>
+          <td><span class="table-btn incorrect-questions accordion-toggle">03</span></td>
+          <td><span class="table-btn skipped-questions accordion-toggle">01</span></td>
+          <td><span class="table-btn time-taken">20 min</span></td>
+          <td><span class="table-btn percentage">70%</span></td>
+          <td class="grade"><span class="table-btn grade">B</span></td>
+        </tr>
+        <tr class="accordion-content">
+          <td colspan="9">
+            <div class="accordion-box">
+              <h3>Sample question detail for Ahsan</h3>
+              <!-- You can replicate the same structure with images, checkmark, etc. -->
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 3 -->
+        <tr class="accordion-row">
+          <td class="student-name">Ahmad</td>
+          <td>01-15-2025</td>
+          <td><span class="table-btn total-questions accordion-toggle">10</span></td>
+          <td><span class="table-btn correct-questions accordion-toggle">07</span></td>
+          <td><span class="table-btn incorrect-questions accordion-toggle">03</span></td>
+          <td><span class="table-btn skipped-questions accordion-toggle">01</span></td>
+          <td><span class="table-btn time-taken">20 min</span></td>
+          <td><span class="table-btn percentage">70%</span></td>
+          <td class="grade"><span class="table-btn grade">B</span></td>
+        </tr>
+        <tr class="accordion-content">
+          <td colspan="9">
+            <div class="accordion-box">
+              <h3>Sample question detail for Ahmad</h3>
+            </div>
+          </td>
+        </tr>
+        
+        <!-- ROW 4 -->
+        <tr class="accordion-row">
+          <td class="student-name">Rabia</td>
+          <td>01-15-2025</td>
+          <td><span class="table-btn total-questions accordion-toggle">10</span></td>
+          <td><span class="table-btn correct-questions accordion-toggle">07</span></td>
+          <td><span class="table-btn incorrect-questions accordion-toggle">03</span></td>
+          <td><span class="table-btn skipped-questions accordion-toggle">01</span></td>
+          <td><span class="table-btn time-taken">20 min</span></td>
+          <td><span class="table-btn percentage">70%</span></td>
+          <td class="grade"><span class="table-btn grade">B</span></td>
+        </tr>
+        <tr class="accordion-content">
+          <td colspan="9">
+            <div class="accordion-box">
+              <h3>Sample question detail for Rabia</h3>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 5 -->
+        <tr class="accordion-row">
+          <td class="student-name">Tooba</td>
+          <td>01-15-2025</td>
+          <td><span class="table-btn total-questions accordion-toggle">10</span></td>
+          <td><span class="table-btn correct-questions accordion-toggle">07</span></td>
+          <td><span class="table-btn incorrect-questions accordion-toggle">03</span></td>
+          <td><span class="table-btn skipped-questions accordion-toggle">01</span></td>
+          <td><span class="table-btn time-taken">20 min</span></td>
+          <td><span class="table-btn percentage">70%</span></td>
+          <td class="grade"><span class="table-btn grade">B</span></td>
+        </tr>
+        <tr class="accordion-content">
+          <td colspan="9">
+            <div class="accordion-box">
+              <h3>Sample question detail for Tooba</h3>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 6 -->
+        <tr class="accordion-row">
+          <td class="student-name">Laiba</td>
+          <td>01-15-2025</td>
+          <td><span class="table-btn total-questions accordion-toggle">10</span></td>
+          <td><span class="table-btn correct-questions accordion-toggle">07</span></td>
+          <td><span class="table-btn incorrect-questions accordion-toggle">03</span></td>
+          <td><span class="table-btn skipped-questions accordion-toggle">01</span></td>
+          <td><span class="table-btn time-taken">20 min</span></td>
+          <td><span class="table-btn percentage">70%</span></td>
+          <td class="grade"><span class="table-btn grade">B</span></td>
+        </tr>
+        <tr class="accordion-content">
+          <td colspan="9">
+            <div class="accordion-box">
+              <h3>Sample question detail for Laiba</h3>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 7 -->
+        <tr class="accordion-row">
+          <td class="student-name">Alizay</td>
+          <td>01-15-2025</td>
+          <td><span class="table-btn total-questions accordion-toggle">10</span></td>
+          <td><span class="table-btn correct-questions accordion-toggle">07</span></td>
+          <td><span class="table-btn incorrect-questions accordion-toggle">03</span></td>
+          <td><span class="table-btn skipped-questions accordion-toggle">01</span></td>
+          <td><span class="table-btn time-taken">20 min</span></td>
+          <td><span class="table-btn percentage">70%</span></td>
+          <td class="grade"><span class="table-btn grade">B</span></td>
+        </tr>
+        <tr class="accordion-content">
+          <td colspan="9">
+            <div class="accordion-box">
+              <h3>Sample question detail for Alizay</h3>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 8 -->
+        <tr class="accordion-row">
+          <td class="student-name">Noor</td>
+          <td>01-15-2025</td>
+          <td><span class="table-btn total-questions accordion-toggle">10</span></td>
+          <td><span class="table-btn correct-questions accordion-toggle">07</span></td>
+          <td><span class="table-btn incorrect-questions accordion-toggle">03</span></td>
+          <td><span class="table-btn skipped-questions accordion-toggle">01</span></td>
+          <td><span class="table-btn time-taken">20 min</span></td>
+          <td><span class="table-btn percentage">70%</span></td>
+          <td class="grade"><span class="table-btn grade">B</span></td>
+        </tr>
+        <tr class="accordion-content">
+          <td colspan="9">
+            <div class="accordion-box">
+              <h3>Sample question detail for Noor</h3>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 9 -->
+        <tr class="accordion-row">
+          <td class="student-name">Aneeqa</td>
+          <td>01-15-2025</td>
+          <td><span class="table-btn total-questions accordion-toggle">10</span></td>
+          <td><span class="table-btn correct-questions accordion-toggle">07</span></td>
+          <td><span class="table-btn incorrect-questions accordion-toggle">03</span></td>
+          <td><span class="table-btn skipped-questions accordion-toggle">01</span></td>
+          <td><span class="table-btn time-taken">20 min</span></td>
+          <td><span class="table-btn percentage">70%</span></td>
+          <td class="grade"><span class="table-btn grade">B</span></td>
+        </tr>
+        <tr class="accordion-content">
+          <td colspan="9">
+            <div class="accordion-box">
+              <h3>Sample question detail for Aneeqa</h3>
+            </div>
+          </td>
+        </tr>
+
+        <!-- ROW 10 -->
+        <tr class="accordion-row">
+          <td class="student-name">Sagan, Cari</td>
+          <td>01-15-2025</td>
+          <td><span class="table-btn total-questions accordion-toggle">10</span></td>
+          <td><span class="table-btn correct-questions accordion-toggle">07</span></td>
+          <td><span class="table-btn incorrect-questions accordion-toggle">03</span></td>
+          <td><span class="table-btn skipped-questions accordion-toggle">01</span></td>
+          <td><span class="table-btn time-taken">20 min</span></td>
+          <td><span class="table-btn percentage">70%</span></td>
+          <td class="grade"><span class="table-btn grade">B</span></td>
+        </tr>
+        <tr class="accordion-content">
+          <td colspan="9">
+            <div class="accordion-box">
+              <h3>Sample question detail for Sagan, Cari</h3>
+            </div>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Optional JS -->
+  <!-- <script src="Report.js"></script> -->
+<script src="Report.js"></script>
+</body>
+</html>

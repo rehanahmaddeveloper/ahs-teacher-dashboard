@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teacher Dashboard</title>
+
+  <link rel="stylesheet" href="Style.css">
+
+  <!-- Google Material Icons -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+
+  <!-- 1) IMPORT COMIC NEUE FONT -->
+  <link
+   rel="stylesheet"
+   href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap"
+  />
+</head>
+<body>
+
+<div class="container" id="mainContainer">
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <!-- Profile Image -->
+    <img
+      src="images/account profile dp.jpg"
+      alt="Profile"
+      class="profile-image"
+    />
+    <h2>Tayyab Ali</h2>
+    <div class="upload-link">Upload Image</div>
+
+    <!-- Navigation Menu -->
+    <ul class="nav-menu">
+      <li>
+        <a href="#" id="myDashboardLink">
+          <span class="material-icons">dashboard</span>
+          My Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="material-icons">person</span>
+          Profile
+        </a>
+      </li>
+      <li>
+        <a href="#" id="userAnalyticsLink">
+          <span class="material-icons">analytics</span>
+          User Analytics
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="material-icons">vpn_key</span>
+          Change Password
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <span class="material-icons">logout</span>
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- ==========================
+       SINGLE HEADER (Unified)
+       ========================== -->
+  <!-- <header class="header">
+    <div class="header-left">
+      <button class="header-btn" id="homeBtn">
+        <span class="material-icons">home</span> Home
+      </button>
+      
+      <button class="header-btn" id="browseBtn">
+        <span class="material-icons">apps</span> Browse
+      </button>
+    </div>
+
+    <div class="header-right"> -->
+      <!-- Profile Icon and Dropdown Menu -->
+      <!-- <div class="profile-icon-container" id="profileDropdown">
+        <img src="images/account profile dp.jpg" alt="Profile" class="profile-icon" />
+        <div class="profile-name">My Account ▼</div> -->
+        <!-- Dropdown Menu -->
+        <!-- <div class="dropdown-menu" id="dropdownMenu">
+          <a href="./index.html">
+            <span class="material-icons">dashboard</span> My Dashboard
+          </a>
+          <a href="#">
+            <span class="material-icons">settings</span> Settings
+          </a>
+        </div>
+      </div>
+    </div>
+  </header> -->
+  <!-- End of Single Header -->
+
+  <!-- MAIN CONTENT (Dashboard) -->
+  <div class="main-content" id="mainContent">
+    <!-- DASHBOARD TITLE -->
+    <h1>Dashboard</h1>
+
+    <!-- TOP ROW: SEARCH + BUTTONS -->
+    <div class="top-row">
+      <div class="search-box">
+        <span class="material-icons">search</span>
+        <input type="text" placeholder="Search with Name or Email" />
+      </div>
+
+      <div class="top-btns">
+        <button>
+          <span class="material-icons">person_add</span>
+          Add a Child Account
+        </button>
+        <button class="add-teacher-btn" id="openTeacherModalBtn">
+          <span class="material-icons">school</span>
+          Add Teacher
+        </button>
+      </div>
+    </div>
+
+    <!-- TABLE SECTION -->
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>SL</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="6" class="no-data">No data available in table</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="table-footer">
+        <div>Showing 0 of 0</div>
+        <div class="pagination">
+          <button>
+            <span class="material-icons">first_page</span>
+          </button>
+          <button>
+            <span class="material-icons">chevron_left</span>
+          </button>
+          <button>
+            <span class="material-icons">chevron_right</span>
+          </button>
+          <button>
+            <span class="material-icons">last_page</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SELECT ROW -->
+    <div class="select-row">
+      <select>
+        <option selected disabled>Select the grade level</option>
+        <option>Grade 1</option>
+        <option>Grade 2</option>
+        <option>Grade 3</option>
+        <option>Grade 4</option>
+        <option>Grade 5</option>
+      </select>
+      <select>
+        <option selected disabled>Select Subject</option>
+        <option>General Science</option>
+        <option>General Mathematics</option>
+        <option>Social Studies</option>
+        <option>Arts and Crafts</option>
+        <option>Computer Science</option>
+        <option>English Language Arts</option>
+      </select>
+    </div>
+
+    <!-- CARDS SECTION -->
+    <div class="cards-section">
+      <!-- Grade 1 -->
+      <div class="card">
+        <img src="images/20240522080751_thumb.png" alt="Science" />
+        <div class="card-content">
+          <h3>General</h3>
+          <p>Science - I</p>
+        </div>
+      </div>
+
+      <!-- Grade 2 -->
+      <div class="card">
+        <img src="images/20240523142253_thumb.jpg" alt="Math" />
+        <div class="card-content">
+          <h3>General</h3>
+          <p>Mathematics - I</p>
+        </div>
+      </div>
+
+      <!-- Grade 3 -->
+      <div class="card">
+        <img src="images/20240817184356_thumb.png" alt="Social" />
+        <div class="card-content">
+          <h3>Social</h3>
+          <p>Social Studies - I</p>
+        </div>
+      </div>
+
+      <!-- Grade 4 -->
+      <div class="card">
+        <img src="images/20240522080751_thumb.png" alt="Science" />
+        <div class="card-content">
+          <h3>General</h3>
+          <p>Science - II</p>
+        </div>
+      </div>
+
+      <!-- Grade 5 -->
+      <div class="card">
+        <img src="images/20240523142253_thumb.jpg" alt="Math" />
+        <div class="card-content">
+          <h3>General</h3>
+          <p>Mathematics - II</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End mainContent -->
+
+
+  <!-- Add Teacher Popup (Modal) -->
+<div class="popup-overlay" id="teacherPopupOverlay">
+  <div class="popup-content">
+    <button class="close-btn" id="closeTeacherPopup">x</button>
+    <h2 class="popup-title">Add Teacher</h2>
+    <div class="popup-form-grid">
+      <input type="text" placeholder="First Name" class="popup-input" />
+      <input type="text" placeholder="Last Name" class="popup-input" />
+      <input type="text" placeholder="User id" class="popup-input" />
+      <input type="text" placeholder="Preferred language" class="popup-input" />
+      <input type="email" placeholder="Email address" class="popup-input" />
+      <input type="text" placeholder="Contact number" class="popup-input" />
+      <select class="popup-input">
+        <option selected disabled>Select the grade level</option>
+        <option>Grade 1</option>
+        <option>Grade 2</option>
+        <option>Grade 3</option>
+        <option>Grade 4</option>
+        <option>Grade 5</option>
+      </select>
+      <select class="popup-input">
+        <option selected disabled>Select Subject</option>
+        <option>General Science</option>
+        <option>General Mathematics</option>
+        <option>Social Studies</option>
+        <option>Arts and Crafts</option>
+        <option>Computer Science</option>
+        <option>English Language Arts</option>
+      </select>
+    </div>
+    <button class="popup-save-btn">Save</button>
+  </div>
+</div>
+
+
+  <!-- INTERFACE-I SECTION (Case-I) - HIDDEN BY DEFAULT -->
+  <section class="interface-case1" id="analyticsContent" style="display: none;">
+
+   <!-- (COMMENTING OUT DUPLICATE HEADER - KEEPING YOUR DATA) -->
+    <header class="header">
+      <div class="header-left">
+        <button class="header-btn" id="homeBtn">
+          <span class="material-icons">home</span> Home
+        </button>
+        <button class="header-btn" id="browseBtn" onclick="window.location.href='./brows.html';">
+          <span class="material-icons">apps</span> Browse
+        </button>        
+      </div>
+
+      <div class="header-right">
+        <div class="profile-icon-container" id="profileDropdown">
+          <img src="images/account profile dp.jpg" alt="Profile" class="profile-icon" />
+          <div class="profile-name">My Account ▼</div>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <a href="./index.html">
+              <span class="material-icons">dashboard</span> My Dashboard
+            </a>
+            <a href="#">
+              <span class="material-icons">settings</span> Settings
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+   
+    
+    <!-- GRADE ROWS CONTAINER -->
+    <div class="grade-rows">
+      <!-- Row 1 -->
+      <div class="grade-row">
+        <div class="grade-box grade1-bg">
+          <h3>Elementary Grade 1</h3>
+          <div class="grade-content">
+            <img src="images/AHS First Layout.png" alt="Grade 1" class="grade-img" />
+            <p>At AHSEdu.Org, first grade students focus on building foundational skills in reading, writing, and mathematics through hands-on learning.</p>
+            <ul>
+              <li>General Science - I <span>104 topics >></span></li>
+              <li>General Mathematics - I <span>101 topics >></span></li>
+              <li>Social Studies - I <span>98 topics >></span></li>
+              <li>Arts and Crafts - I <span>77 topics >></span></li>
+              <li>Computer Science - I <span>89 topics >></span></li>
+              <li>English Language Arts - I <span>120 topics >></span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Grade 2 -->
+        <div class="grade-box grade2-bg">
+          <h3>Elementary Grade 2</h3>
+          <div class="grade-content">
+            <img src="images/AHS First Layout (1).png" alt="Grade 2" class="grade-img" />
+            <p>At AHSEdu.Org, second graders continue to expand their knowledge in various subjects. Also, work on developing critical thinking and problem-solving skills.</p>
+            <ul>
+              <li>General Science - II <span>81 topics >></span></li>
+              <li>General Mathematics - II <span>96 topics >></span></li>
+              <li>Social Studies - II <span>75 topics >></span></li>
+              <li>Arts and Crafts - II <span>60 topics >></span></li>
+              <li>Computer Science - II <span>88 topics >></span></li>
+              <li>English Language Arts - II <span>130 topics >></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="grade-row">
+        <div class="grade-box grade3-bg">
+          <h3>Elementary Grade 3</h3>
+          <div class="grade-content">
+            <img src="images/AHS First Layout (2).png" alt="Grade 3" class="grade-img" />
+            <p>Third-grade students further refine their reading and writing skills, begin to explore more complex mathematical concepts, and learn about different cultures in social studies.</p>
+            <ul>
+              <li>General Science - III <span>101 topics >></span></li>
+              <li>General Mathematics - III <span>99 topics >></span></li>
+              <li>Social Studies - III <span>120 topics >></span></li>
+              <li>Arts and Crafts - III <span>90 topics >></span></li>
+              <li>Computer Science - III <span>74 topics >></span></li>
+              <li>English Language Arts - III <span>220 topics >></span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Grade 4 -->
+        <div class="grade-box grade4-bg">
+          <h3>Elementary Grade 4</h3>
+          <div class="grade-content">
+            <img src="images/AHS First Layout (3).png" alt="Grade 4" class="grade-img" />
+            <p>Fourth grade is a time for AHSEdu.Org students to deepen their understanding of science and history, and begin to work more independently on projects and assignments.</p>
+            <ul>
+              <li>General Science - IV <span>124 topics >></span></li>
+              <li>General Mathematics - IV <span>113 topics >></span></li>
+              <li>Social Studies - IV <span>87 topics >></span></li>
+              <li>Arts and Crafts - IV <span>76 topics >></span></li>
+              <li>Computer Science - IV <span>93 topics >></span></li>
+              <li>English Language Arts - IV <span>136 topics >></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="grade-row center-row">
+        <div class="grade-box grade5-bg">
+          <h3>Elementary Grade 5</h3>
+          <div class="grade-content">
+            <img src="images/AHS First Layout (4).png" alt="Grade 5" class="grade-img" />
+            <p>In fifth grade, students are challenged to think critically, work collaboratively, and demonstrate mastery of their skills in preparation for middle school.</p>
+            <ul>
+              <li>General Science - V <span>131 topics >></span></li>
+              <li>General Mathematics - V <span>97 topics >></span></li>
+              <li>Social Studies - V <span>106 topics >></span></li>
+              <li>Arts and Crafts - V <span>82 topics >></span></li>
+              <li>Computer Science - V <span>139 topics >></span></li>
+              <li>English Language Arts - V <span>186 topics >></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,801 @@
+
+/* BASIC RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+}
+
+
+/* MATERIAL ICONS SMALLER SIZE (ADJUST IF NEEDED) */
+.material-icons {
+  font-size: 16px;
+  vertical-align: middle; /* helps align icons with text */
+}
+
+/* WRAPPER */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  background-color: #d2e6eb; /* Light blue background */
+  margin: 20px;             /* Space around the sidebar */
+  width: 250px;
+  border-radius: 10px;
+  flex-shrink: 0;           /* Prevent sidebar from shrinking */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.sidebar .profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #238ca0;
+  margin-bottom: 10px;
+}
+
+.sidebar h2 {
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.sidebar .upload-link {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #ffffff;
+  color: #007b7f;
+  margin-bottom: 20px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50px;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.nav-menu {
+  width: 100%;
+}
+
+.nav-menu li {
+  list-style: none;
+  margin-bottom: 10px;
+  font-weight: bold;
+  
+}
+
+.nav-menu li a {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #238ca0;
+  border-radius: 5px;
+  padding: 8px 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.nav-menu li a span.material-icons {
+  margin-right: 8px;
+  color: #007b7f;
+  font-size: 20px; /* icon size in the sidebar menu */
+}
+
+.nav-menu li a:hover {
+  background-color: #c6eaf4;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* DASHBOARD TITLE */
+.main-content h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+/* TOP ROW: SEARCH + BUTTONS */
+.top-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 200px;
+  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* SEARCH BOX (light blue with left icon and right icon) */
+.search-box {
+  flex: 1;
+  min-width: 220px;
+  background-color: #afe1ff;
+  border: 1px solid #4fa3b3;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  position: relative;
+}
+
+.search-box span.material-icons:first-of-type {
+  margin-right: 8px;
+  color: #555;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.search-box span.material-icons:last-of-type {
+  margin-left: 8px;
+  color: #555;
+  cursor: pointer;
+}
+
+/* TOP BUTTONS */
+.top-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  
+}
+
+.top-btns button {
+  color: #333;
+  background-color: #afe1ff;
+  border: 1px solid #4fa3b3;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.2s;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.top-btns button span.material-icons {
+  color: #007b7f;
+  font-size: 18px;
+}
+
+.top-btns button:hover {
+  background-color: #a4dff3;
+}
+
+/* TABLE SECTION */
+.table-container {
+  border: 1px solid #4fa3b3;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #f0faff;
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.table-container thead {
+    background-color: #afe1ff;
+    
+}
+
+.table-container th, .table-container td {
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.table-container tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-container .no-data {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+/* TABLE FOOTER (pagination, etc.) */
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  font-size: 14px;
+  
+  color: #333;
+  
+}
+
+.pagination {
+  display: flex;
+  gap: 5px;
+}
+
+.pagination button {
+  background-color: #b6e7f8;
+  border: 1px solid #99dcef;
+  border-radius: 4px;
+  padding: 5px 8px;
+  cursor: pointer;
+  color: #333;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.pagination button span.material-icons {
+  font-size: 18px;
+  color: #007b7f;
+}
+
+.pagination button:hover {
+  background-color: #a4dff3;
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    overflow-x: auto;
+  }
+
+  .table-container table {
+    min-width: 600px;
+  }
+}
+
+
+/* SELECT ROW */
+.select-row {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.select-row select {
+  background-color: #ffffff;
+  border: 2px solid #4fa3b3;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  min-width: 400px;
+  cursor: pointer;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+@media (max-width: 768px) {
+  .select-row {
+    flex-wrap: nowrap;
+    gap: 10px;
+  }
+
+  .select-row select {
+    width: 50%;
+    min-width: auto;
+  }
+}
+
+
+/* CARDS SECTION */
+.cards-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #f0faff;
+  border-radius: 10px;
+  width: calc(33.333% - 13.333px); /* 3 cards in a row, with ~20px gap total */
+  min-width: 200px;
+  overflow: hidden;
+  text-align: center;
+  transition: box-shadow 0.2s;
+  border: 1px solid #4fa3b3;
+  padding: 20px;
+}
+
+.card:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card .card-content {
+  padding: 10px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .card {
+    width: calc(50% - 10px);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: auto;
+  }
+  .top-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-box {
+    width: 100%;
+  }
+  .top-btns {
+    justify-content: flex-start;
+  }
+  .cards-section {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+  }
+  .top-row {
+    gap: 10px;
+    align-items: center;
+}
+
+}
+
+  /* A simple container to center the "Add Teacher" button on the page */
+  .page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* For demo only */
+  }
+
+  /* ADD TEACHER BUTTON WITH ICON */
+  .add-teacher-btn {
+    background-color: #b6e7f8; /* Light teal */
+    color: #333;
+    border: 2px solid #99dcef;
+    border-radius: 8px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* space between icon and text */
+  }
+  .add-teacher-btn:hover {
+    background-color: #a4dff3;
+  }
+
+  /* POPUP OVERLAY (the dark semi-transparent background) */
+  .popup-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none; /* hidden by default */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  /* POPUP CONTENT (the white box) */
+  .popup-content {
+    background: #fff;
+    border-radius: 10px;
+    width: 700px;       /* Adjust if you want a wider/narrower popup */
+    max-width: 90%;     /* Responsive for smaller screens */
+    padding: 20px;
+    position: relative; /* for the close button’s absolute positioning */
+  }
+
+  /* RED CIRCLE CLOSE BUTTON with a white "X" */
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff3333; /* red */
+    color: #fff;               /* white text */
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 24px;
+    font-weight: bold;
+  }
+
+  /* POPUP TITLE (e.g. "Add Teacher") */
+  .popup-title {
+    font-size: 28px;
+    color: #238ca0;
+    margin-bottom: 20px;
+    font-family: comic neue, comic sans ms, cursive;
+  }
+
+  /* 2-COLUMN GRID for the form fields */
+  .popup-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* space between fields */
+    margin-bottom: 20px;
+  }
+
+  /* INPUT & SELECT FIELDS */
+  .popup-input {
+    border: 1px solid #238ca0; /* teal border */
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 14px;
+    outline: none;
+    font-family: comic neue, comic sans ms, cursive;
+
+  }
+
+  /* ACTIONS ROW for the SAVE button (aligned to the LEFT) */
+  .popup-actions {
+    display: flex;
+    justify-content: flex-start; /* move button to the left side */
+  }
+
+  /* SAVE BUTTON (same Comic Neue font, teal color) */
+  .popup-save-btn {
+    background-color: #238ca0; /* teal */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive; /* ensure same font */
+  }
+  .popup-save-btn:hover {
+    background-color: #4ab2c3;
+  }
+
+  .popup-actions {
+display: flex;
+justify-content: flex-start; /* left-align */
+}
+
+  /* RESPONSIVE: single-column form on very small screens */
+  @media (max-width: 600px) {
+    .popup-content {
+      width: 95%;
+      padding: 20px;
+    }
+    .popup-form-grid {
+      grid-template-columns: 1fr; /* single column on mobile */
+    }
+    .popup-actions {
+      justify-content: center; /* or flex-start, up to you */
+    }
+  }
+  
+
+  /******************************************/
+/* Interface-I (Case-I) Styles            */
+/******************************************/
+.interface-case1 {
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    padding: 20px;
+    margin: 20px 0;
+  }
+/* HEADER STYLES */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #fffdfd;
+
+}
+
+/* HEADER LEFT SECTION */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* BUTTON STYLES (Home, Browse) */
+.header-btn {
+  display: flex;
+  align-items: center;
+  background-color: #d9f5f7; /* Light background for buttons */
+  color: #007b7f;           /* Text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.header-btn span.material-icons {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+/* Hover and Active Button Style */
+.header-btn:hover,
+.header-btn.active {
+  background-color: #b8e0e5; /* Hover and Active color */
+}
+
+/* PROFILE ICON AND DROPDOWN MENU */
+.profile-icon-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative; /* Needed for positioning the dropdown */
+}
+
+.profile-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 10px;
+  border: 3px solid #007b7f;
+
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+/* DROPDOWN MENU STYLES */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  min-width: 160px;
+  z-index: 9999;
+}
+
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s ease;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-menu .material-icons {
+  margin-right: 8px;
+  font-size: 18px;
+  color: #007b7f;
+}
+
+/* SHOWING DROPDOWN MENU */
+.profile-icon-container:hover + .dropdown-menu {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 10px;
+  }
+
+  .header-left {
+    gap: 5px;
+    margin-left: 0;
+  }
+
+  .header-btn {
+    width: auto;
+    padding: 8px 10px;
+  }
+}
+  
+  /* GRADE ROWS CONTAINER */
+.grade-rows {
+  display: flex;
+  flex-wrap: wrap;            /* Allow the boxes to wrap on smaller screens */
+  gap: 20px;
+  justify-content: center;    /* Ensures that grade boxes are aligned in the center */
+  margin-top: 20px;
+}
+
+/* Each row (2 boxes in first 2 rows, 1 box in 3rd row) */
+.grade-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;    /* Aligns grade boxes in the center */
+  flex-wrap: wrap;            /* Ensures that the boxes wrap on smaller screens */
+  width: 100%;                /* Make sure each row takes the full width of the container */
+}
+
+/* GRADE BOXES */
+.grade-box {
+  flex: 1 1 280px;            /* Ensures the boxes are responsive but maintain a minimum width */
+  max-width: 600px;           /* Limits the box size to a maximum width */
+  border-radius: 10px;
+  padding: 20px;
+  color: #ffffff;
+  position: relative;
+  background-color: #00a0dc;  /* Default background color */
+  /* text-align: center; */
+  transition: all 0.3s ease;  /* For smooth hover transitions */
+}
+
+.grade-box h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-family: comic neue, comic sans ms, cursive;
+  
+
+}
+
+.grade-content {
+  margin-top: 10px;
+}
+
+.grade-img {
+  width: 120px;
+  float: right;  /* Places the image on the right side */
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.grade-box p {
+  margin-bottom: 10px;
+  font-size: 15px;
+  color: #ffffff;
+  font-family: comic neue, comic sans ms, cursive;
+}
+
+.grade-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grade-box li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-family: comic neue, comic sans ms, cursive;
+}
+
+.grade-box li span {
+  color: #ecfeff;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: comic neue, comic sans ms, cursive;
+}
+
+/* Background colors for different grades */
+.grade1-bg {
+  background-color: #00a0dc; /* Light Blue */
+}
+
+.grade2-bg {
+  background-color: #00a0dc; /* Slightly different Light Blue */
+}
+
+.grade3-bg {
+  background-color: #ec8f14; /* Light Orange */
+}
+
+.grade4-bg {
+  background-color: #ec8f14; /* Another Orange Tone */
+}
+
+.grade5-bg {
+  background-color: #00b96e; /* Light Green */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .grade-box {
+    max-width: 48%; /* Reduce the width to fit two boxes per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .grade-box {
+    max-width: 100%; /* Allow boxes to take up full width on small screens */
+  }
+}
+
+

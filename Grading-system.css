@@ -1,0 +1,821 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Stack header on top */
+  }
+  
+  /* Basic styles for the sidebar */
+  .sidebar {
+    width: 250px;
+    background-color: #c5f6ff;
+    padding: 20px;
+    padding-bottom: 200px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    bottom: 0; /* Ensure the sidebar extends to the bottom */
+    margin-left: 20px;
+  margin-top: 20px;
+    transition: left 0.3s ease;
+    border-radius: 10px;
+    overflow-y: auto; /* Allow scrolling */
+    max-height: calc(100vh - 100px); /* Make the sidebar height responsive */
+    overflow: hidden;
+  }
+  
+  /* Sidebar item styling */
+  .sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: #007b7f;
+    color: #fff;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .add-schedule-t {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  .sidebar-item-text {
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  }
+  
+  /* Hover effect */
+  .sidebar-item:hover {
+    background-color: #008a8f;
+  }
+  
+  .sidebar-item .material-icons {
+    font-size: 24px;
+  }
+  
+  /* Button for mobile toggle */
+  .toggle-btn {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #007b7f;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 999;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  }
+  
+  /* Make sidebar responsive */
+  @media screen and (max-width: 768px) {
+    /* Show the toggle button on smaller screens */
+    .toggle-btn {
+      display: block;
+    }
+  
+    /* Initially hide the sidebar off-screen */
+    .sidebar {
+      left: -270px;
+      position: fixed; /* Fixed position ensures sidebar doesn't go below the header */
+      top: 40px; /* Start from the top of the screen */
+      max-height: calc(100vh - 100px); /* Ensure the sidebar height fits the screen */
+    }
+  
+    /* When the sidebar is active, show it */
+    .sidebar.show {
+      left: 0;
+    }
+  }
+  
+  /* Header Section */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #007b7f;
+    z-index: 1000; /* Ensures the header stays on top */
+  }
+  
+  /* Header Left - Buttons */
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .header-btn {
+    padding: 10px;
+    background-color: #c5f6ff;
+    color: #007b7f;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  
+  }
+  
+  .header-btn:hover {
+    background-color: #a4dff3;
+  }
+  
+  .header-btn span.material-icons {
+    font-size: 20px;
+  }
+  
+  /* Profile Icon Container */
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-icon-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .profile-name {
+    font-size: 16px;
+    color: #333;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 170px;
+    z-index: 9999;
+  }
+  
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown-menu .material-icons {
+    margin-right: 8px;
+    font-size: 18px;
+    color: #007b7f;
+  }
+  
+  /* Show Dropdown on Hover */
+  .profile-icon-container:hover + .dropdown-menu {
+    display: block;
+  }
+  
+  
+  /* Right Section Layout */
+  .right-section {
+    margin-left: 270px; /* Space for the sidebar, as before */
+    padding: 40px 20px 20px 20px;
+    flex-grow: 1;
+    margin-top: -420px;
+  }
+
+  /* Right Section Layout */
+.right-section {
+    margin-left: 270px; /* Space for the sidebar, as before */
+    padding: 40px 20px 20px 20px;
+    flex-grow: 1;
+    margin-top: -420px;
+  }
+  
+  /* Add Schedule Section Container */
+  .add-schedule-section {
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+  
+.add-schedule-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-right: 20px;
+}
+
+  /* Row 1: Title + Plus Icon */
+  .title-plus {
+    display: flex;
+    align-items: center;          /* Vertically center the button and title */
+    justify-content: space-between; /* Title on left, plus icon on right */
+    margin-bottom: 10px;         /* Space below this row */
+  }
+  
+  /* The Title */
+  .add-schedule-title {
+    font-size: 20px;
+    color: #007b7f;
+    font-weight: bold;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    margin: 0;
+    padding-left: 20px;
+  }
+  
+  /* The Plus Icon Button */
+  .add-icon {
+    background-color: #007b7f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    /* Optional margin-left if you want some space from the title
+       margin-left: 10px; 
+    */
+  }
+  
+  .add-icon:hover {
+    background-color: #006f6f;
+  }
+  
+  /* Row 2: Filters Side by Side (50% each) */
+  .filters-row {
+    display: flex;
+    justify-content: space-between; /* Spread them out horizontally */
+    background-color: #c5f6ff; /* Light blue background */
+    padding: 15px;
+    border-radius: 10px;
+
+  }
+  
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    font-size: 20px;
+    color: #006f6f;
+    pointer-events: none;
+}
+
+.search-input {
+    padding-left: 35px;
+    text-indent: 30px;
+    width: 40%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    outline: none; /* Default focus border remove karne ke liye */
+    transition: border-color 0.3s ease-in-out;
+    border: 1px solid #007b7f;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+
+  /* Each Select Box */
+
+  .filter-dropdown {
+    width: 15%;       /* So both can fit side by side at about 50% each */
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #007b7f;
+    cursor: pointer;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  
+  }
+  
+  /* Optional: style <option> text */
+  .filter-dropdown option {
+    font-size: 14px;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  
+  }
+  
+/* Tablets & Mobile: Keep search input & dropdown in one row */
+@media (max-width: 991px) {
+    .filters-row {
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: space-between; /* Keep spacing proper */
+        gap: 10px;
+    }
+
+    .search-container {
+        width: 55%; /* Search input takes 60% */
+    }
+
+    .search-input {
+        width: 100%; /* Full width inside container */
+    }
+
+    .filter-dropdown {
+        width: 38%; /* Dropdown takes 40% minus some gap */
+    }
+}
+
+@media (max-width: 576px) {
+    /* Make filters row flex and align properly */
+    .filters-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px; /* Space between input and dropdown */
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    /* Search Input */
+    .search-container {
+        flex: 3; /* 60% width */
+        display: flex;
+        align-items: center;
+    }
+
+    .search-input {
+        width: 100%; /* Full width inside flex */
+        height: 36px; /* Adjust height */
+        padding-left: 35px; /* Space for icon */
+    }
+
+    /* Dropdown */
+    .filter-dropdown {
+        flex: 2; /* 40% width */
+        height: 36px; /* Same height as input */
+    }
+
+    /* Adjust search icon positioning */
+    .search-icon {
+        left: 10px;
+        font-size: 18px;
+    }
+}
+
+  
+  /* Sidebar toggle for mobile */
+  @media (max-width: 768px) {
+  
+    .filter-dropdown {
+      margin-top: 10px;
+    }
+  
+    .add-icon {
+      margin-bottom: 10px;
+    }
+  
+    /* Ensure the right section layout adjusts to smaller screens */
+    .right-section {
+      margin-left: 0; /* Remove space for sidebar */
+      padding: 20px;
+    }
+  
+    /* Right Section Layout */
+  .right-section {
+  
+    margin-top: 0px;
+  }
+  
+  }
+
+  .techear-grading-gading-list {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+/* Common Card Styling */
+.techear-grading-card {
+    text-align: center;
+    border: 2px solid;
+    border-radius: 10px;
+    padding: 20px;
+    min-height: 180px;
+    margin-top: 30px;
+}
+
+/* Grading Circle */
+.techear-grading-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -50px auto 10px;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+/* A+ Styles */
+.techear-grading-card-a-plus {
+    border-color: #0a820a;
+    background-color: #e6f9e6;
+    color: #0a820a;
+}
+.techear-grading-circle-a-plus {
+    background-color: #0a820a;
+}
+.techear-grading-btn-a-plus {
+    background-color: #0a820a;
+    color: white;
+}
+
+.btn-techear-grading-btn-a-plus{
+    background-color: #0a820a;
+    color: white;
+    padding: 2px 20px;
+    border: none;
+    border-radius: 50px;
+}
+
+/* A Styles */
+.techear-grading-card-a {
+    border-color: g#3db53d;
+    background-color: #e6f9e6;
+    color: #3db53d;
+}
+.techear-grading-circle-a {
+    background-color: #3db53d;
+}
+.techear-grading-btn-a {
+    background-color: #3db53d;
+    color: white;
+}
+
+.btn-techear-grading-btn-a{
+    background-color: #3db53d;
+    color: white;
+    padding: 2px 20px;
+    border: none;
+    border-radius: 50px;
+}
+
+/* B+ Styles */
+.techear-grading-card-b-plus {
+    border-color: #ea630f;
+    background-color: #fff3e6;
+    color: #ea630f;
+}
+.techear-grading-circle-b-plus {
+    background-color: #ea630f;
+}
+.techear-grading-btn-b-plus {
+    background-color: #ea630f;
+    color: white;
+}
+
+.btn-techear-grading-btn-b-plus{
+    background-color: #ea630f;
+    color: white;
+    padding: 2px 20px;
+    border: none;
+    border-radius: 50px;
+}
+
+/* B Styles */
+.techear-grading-card-b {
+    border-color: #f09257;
+    background-color: #fff3e6;
+    color: #f09257;
+}
+.techear-grading-circle-b {
+    background-color: #f09257;
+}
+.techear-grading-btn-b {
+    background-color: #f09257;
+    color: white;
+}
+
+.btn-techear-grading-btn-b{
+    background-color: #f09257;
+    color: white;
+    padding: 2px 20px;
+    border: none;
+    border-radius: 50px;
+}
+
+/* Score Text */
+.techear-grading-score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #444444;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+}
+
+/* Description Text */
+.techear-grading-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #444444;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+}
+
+/* Buttons */
+.techear-grading-buttons {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+.techear-grading-buttons .btn {
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 5px 10px;
+
+}
+
+
+/* C+ Styles */
+.techear-grading-card-c-plus {
+    border-color: #7c41f1;
+    background-color: #f3e6ff;
+    color: #7c41f1;
+}
+.techear-grading-circle-c-plus {
+    background-color: #7c41f1;
+}
+.techear-grading-btn-c-plus {
+    background-color: #7c41f1;
+    color: white;
+}
+
+.btn-techear-grading-btn-c-plus{
+    background-color: #7c41f1;
+    color: white;
+    padding: 2px 20px;
+    border: none;
+    border-radius: 50px;
+}
+
+/* C Styles */
+.techear-grading-card-c {
+    border-color: #a37af5;
+    background-color: #f3e6ff;
+    color: #a37af5;
+}
+.techear-grading-circle-c {
+    background-color: #a37af5;
+}
+.techear-grading-btn-c {
+    background-color: #a37af5;
+    color: white;
+}
+
+.btn-techear-grading-btn-c{
+    background-color: #a37af5;
+    color: white;
+    padding: 2px 20px;
+    border: none;
+    border-radius: 50px;
+}
+
+/* D Styles */
+.techear-grading-card-d {
+    border-color: #f81616;
+    background-color: #ffe6e6;
+    color: #f81616;
+}
+.techear-grading-circle-d {
+    background-color: #f81616;
+}
+.techear-grading-btn-d {
+    background-color: #f81616;
+    color: white;
+}
+
+.btn-techear-grading-btn-d {
+    background-color: #f81616;
+    color: white;
+    padding: 2px 20px;
+    border: none;
+    border-radius: 50px;
+}
+
+/* E Styles */
+.techear-grading-card-e {
+    border-color: #fa5c5c;
+    background-color: #ffe6e6;
+    color: #fa5c5c;
+}
+.techear-grading-circle-e {
+    background-color: #fa5c5c;
+}
+.techear-grading-btn-e {
+    background-color: #fa5c5c;
+    color: white;
+}
+
+.btn-techear-grading-btn-e {
+    background-color: #fa5c5c;
+    color: white;
+    padding: 2px 20px;
+    border: none;
+    border-radius: 50px;
+}
+
+/* Ensure row layout is correct */
+.techear-grading-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Desktop: 4 per row */
+.techear-grading-container .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+@media (max-width: 1220px) {
+    .techear-grading-gading-list .col-md-3 {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        max-width: 50% !important;
+    }
+}
+
+@media (max-width: 487px) {
+    .techear-grading-gading-list .col-md-3 {
+        width: 100% !important;
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+
+}
+
+
+.techear-grading-modal .modal-header {
+  border-bottom: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  padding: 10px;
+
+}
+.techear-grading-modal .btn-close {
+  background-color: #ff0000;
+  border-radius: 50%;
+  opacity: 1;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none; /* Remove Bootstrap's default icon */
+  padding: 0;
+}
+.techear-grading-modal .btn-close::before {
+  content: '×';
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+.techear-grading-modal .modal-title {
+  font-weight: bold;
+  color: #008297;
+  font-size: 30px;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+}
+.techear-grading-modal .reset-icon {
+  cursor: pointer;
+  color: #008297;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  position: absolute;
+  right: 40px;
+  font-size: 18px;
+
+}
+.techear-grading-modal .reset-text{
+  color: #313131;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.techear-grading-modal .modal-body input {
+  border: 2px solid #bddde3;
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+}
+.techear-grading-modal .save-btn {
+  background-color: #008297;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+  
+}
+.techear-grading-modal .percentage-wrapper {
+  position: relative;
+}
+.techear-grading-modal .percentage-wrapper span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #008297;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+
+
+/* Modal Styling */
+.techear-grading-modal .modal-dialog {
+  max-width: 600px;
+}
+
+.techear-grading-modal .modal-header {
+  border-bottom: none;
+  position: relative;
+  padding: 20px;
+}
+
+.techear-grading-modal .modal-title {
+  color: #008297;
+  font-size: 24px;
+  font-family: 'Comic Neue', cursive;
+  font-weight: 700;
+}
+
+.techear-grading-percentage-wrapper {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.techear-grading-percentage-wrapper span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #008297;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.techear-grading-save-btn {
+  background-color: #008297 !important;
+  color: white !important;
+  padding: 10px 30px !important;
+  border-radius: 8px !important;
+  font-family: 'Comic Neue', cursive;
+  font-size: 16px;
+}

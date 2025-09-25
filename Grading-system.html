@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading System</title>
+    <link rel="stylesheet" href="Grading-system.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!-- Font Awesome CDN -->
+
+</head>
+<body>
+    <!-- Header Section -->
+  <header class="header">
+    <div class="header-left">
+        <button class="header-btn" id="homeBtn" onclick="window.location.href='./index.html';">
+            <span class="material-icons">home</span> Home
+          </button>
+      <button class="header-btn" id="browseBtn">
+        <span class="material-icons">apps</span> Browse
+      </button>
+    </div>
+    
+    <div class="header-right">
+      <!-- Profile Icon and Dropdown Menu -->
+      <div class="profile-icon-container" id="profileDropdown">
+        <img src="images/account profile dp.jpg" alt="Profile" class="profile-icon" />
+        <div class="profile-name">My Account ▼</div>
+        
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="./index.html">
+            <span class="material-icons">dashboard</span> My Dashboard
+          </a>
+          <a href="#">
+            <span class="material-icons">settings</span> Settings
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <button class="toggle-btn" onclick="toggleSidebar()">☰</button> 
+  <!-- The button that appears on mobile to open/close the sidebar -->
+  
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-item">
+      <span class="material-icons">calendar_today</span>
+      <a class="add-schedule-t" href="Brows.html"><span class="sidebar-item-text">Add Schedule</span></a>
+    </div>
+    <div class="sidebar-item">
+      <span class="material-icons">bar_chart</span>
+      <span class="sidebar-item-text">Grading System</span>
+    </div>
+    <a style="text-decoration: none;" href="./My students.html">
+      <div class="sidebar-item">
+        <span class="material-icons">people</span>
+        <span class="sidebar-item-text">My Students</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- Main Content Area (Right Side) -->
+<main class="right-section">
+    <!-- Add Schedule Section -->
+    <div class="add-schedule-section">
+      
+      <!-- Row 1: Title + Plus Icon -->
+      <div class="title-plus">
+        <h2 class="add-schedule-title">AHS Grading System</h2>
+        <div class="add-schedule-button">
+        <button  class="add-icon" data-bs-toggle="modal" data-bs-target="#addGradeModal">+</button>
+        <button  class="add-icon"><span class="material-icons">download</span></button>
+    </div>
+      </div>
+  
+      <!-- Row 2: Two Select Fields (50% each) -->
+      <div class="filters-row">
+
+         <div class="search-container">
+    <span class="material-icons search-icon">search</span>
+    <input type="text" placeholder="Find specific grade ranges" class="search-input" />
+</div>
+
+
+        <select class="filter-dropdown">
+          <option>85% - 89%</option>
+          <option>95% - 100%</option>
+          <option>90% - 94%</option>
+          <option>85% - 89%</option>
+          <option>80% - 84%</option>
+        </select>
+      </div>
+  
+    </div>
+
+    
+    <div class="container">
+        <div class="row g-4 techear-grading-gading-list">
+    
+            <!-- A+ -->
+            <div class="col-md-3">
+                <div class="techear-grading-card techear-grading-card-a-plus">
+                    <div class="techear-grading-circle techear-grading-circle-a-plus">A+</div>
+                    <h4 class="techear-grading-score">95% - 100%</h4>
+                    <p class="techear-grading-text">Excellent</p>
+                    <div class="techear-grading-buttons">
+                        <button class="btn-techear-grading-btn-a-plus" data-bs-toggle="modal" data-bs-target="#gradingModal"><i class="fa-solid fa-pen"></i > Edit</button>
+                        <button class="btn-techear-grading-btn-a-plus"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- A -->
+            <div class="col-md-3">
+                <div class="techear-grading-card techear-grading-card-a">
+                    <div class="techear-grading-circle techear-grading-circle-a">A</div>
+                    <h4 class="techear-grading-score">90% - 94%</h4>
+                    <p class="techear-grading-text">Very Good</p>
+                    <div class="techear-grading-buttons">
+                        <button class="btn-techear-grading-btn-a" data-bs-toggle="modal" data-bs-target="#gradingModal"><i class="fa-solid fa-pen"></i> Edit</button>
+                        <button class="btn-techear-grading-btn-a"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- B+ -->
+            <div class="col-md-3">
+                <div class="techear-grading-card techear-grading-card-b-plus">
+                    <div class="techear-grading-circle techear-grading-circle-b-plus">B+</div>
+                    <h4 class="techear-grading-score">85% - 89%</h4>
+                    <p class="techear-grading-text">Good</p>
+                    <div class="techear-grading-buttons">
+                        <button class="btn-techear-grading-btn-b-plus" data-bs-toggle="modal" data-bs-target="#gradingModal"><i class="fa-solid fa-pen"></i> Edit</button>
+                        <button class="btn-techear-grading-btn-b-plus"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- B -->
+            <div class="col-md-3">
+                <div class="techear-grading-card techear-grading-card-b">
+                    <div class="techear-grading-circle techear-grading-circle-b">B</div>
+                    <h4 class="techear-grading-score">80% - 84%</h4>
+                    <p class="techear-grading-text">Above Average</p>
+                    <div class="techear-grading-buttons">
+                        <button class="btn-techear-grading-btn-b" data-bs-toggle="modal" data-bs-target="#gradingModal"><i class="fa-solid fa-pen"></i> Edit</button>
+                        <button class="btn-techear-grading-btn-b"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- C+ -->
+        <div class="col-md-3">
+            <div class="techear-grading-card techear-grading-card-c-plus">
+                <div class="techear-grading-circle techear-grading-circle-c-plus">C+</div>
+                <h4 class="techear-grading-score">70% - 79%</h4>
+                <p class="techear-grading-text">Average</p>
+                <div class="techear-grading-buttons">
+                    <button class="btn-techear-grading-btn-c-plus" data-bs-toggle="modal" data-bs-target="#gradingModal"><i class="fa-solid fa-pen"></i> Edit</button>
+                    <button class="btn-techear-grading-btn-c-plus"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- C -->
+        <div class="col-md-3">
+            <div class="techear-grading-card techear-grading-card-c">
+                <div class="techear-grading-circle techear-grading-circle-c">C</div>
+                <h4 class="techear-grading-score">60% - 69%</h4>
+                <p class="techear-grading-text">Below Average</p>
+                <div class="techear-grading-buttons">
+                    <button class="btn-techear-grading-btn-c" data-bs-toggle="modal" data-bs-target="#gradingModal"><i class="fa-solid fa-pen"></i> Edit</button>
+                    <button class="btn-techear-grading-btn-c"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- D -->
+        <div class="col-md-3">
+            <div class="techear-grading-card techear-grading-card-d">
+                <div class="techear-grading-circle techear-grading-circle-d">D</div>
+                <h4 class="techear-grading-score">50% - 59%</h4>
+                <p class="techear-grading-text">Needs Improvement</p>
+                <div class="techear-grading-buttons">
+                    <button class="btn-techear-grading-btn-d" data-bs-toggle="modal" data-bs-target="#gradingModal"><i class="fa-solid fa-pen"></i> Edit</button>
+                    <button class="btn-techear-grading-btn-d"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- E -->
+        <div class="col-md-3">
+            <div class="techear-grading-card techear-grading-card-e">
+                <div class="techear-grading-circle techear-grading-circle-e">E</div>
+                <h4 class="techear-grading-score">Below 50%</h4>
+                <p class="techear-grading-text">Poor</p>
+                <div class="techear-grading-buttons">
+                    <button class="btn-techear-grading-btn-e" data-bs-toggle="modal" data-bs-target="#gradingModal"><i class="fa-solid fa-pen"></i> Edit</button>
+                    <button class="btn-techear-grading-btn-e"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    
+        </div>
+    </div>
+
+
+
+    <div class="modal fade techear-grading-modal" id="gradingModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title">Edit A+</h5>
+                  <div class="reset-icon">&#x21bb; <span class="reset-text">Reset to Default</span> </div>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <input type="text" class="form-control mb-2" placeholder="A+">
+                  <div class="d-flex gap-2">
+                      <div class="percentage-wrapper flex-grow-1">
+                          <input type="number" class="form-control" placeholder="95"> <span>%</span>
+                      </div>
+                      <div class="percentage-wrapper flex-grow-1">
+                          <input type="number" class="form-control" placeholder="100"> <span>%</span>
+                      </div>
+                  </div>
+                  <input type="text" class="form-control mt-2" placeholder="Excellent">
+              </div>
+              <div class="modal-footer justify-content-center">
+                  <button type="button" class="save-btn">Save & Apply</button>
+              </div>
+          </div>
+      </div>
+  </div>
+</main>
+
+<!-- Add New Grade Modal -->
+<div class="modal fade techear-grading-modal" id="addGradeModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Add New Grade</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+              <div class="mb-3">
+                  <input type="text" 
+                         class="form-control techear-grading-input" 
+                         placeholder="Grade Name">
+              </div>
+              
+              <div class="d-flex gap-3 mb-3">
+                  <div class="techear-grading-percentage-wrapper flex-grow-1">
+                      <input type="number" 
+                             class="form-control techear-grading-input" 
+                             placeholder="Percentage From">
+                      <span>%</span>
+                  </div>
+                  
+                  <div class="techear-grading-percentage-wrapper flex-grow-1">
+                      <input type="number" 
+                             class="form-control techear-grading-input" 
+                             placeholder="Percentage To">
+                      <span>%</span>
+                  </div>
+              </div>
+              
+              <div class="mb-3">
+                  <input type="text" 
+                         class="form-control techear-grading-input" 
+                         placeholder="Performance Description e.g., Below Expectations">
+              </div>
+          </div>
+          <div class="modal-footer justify-content-center py-3">
+              <button type="button" class="btn techear-grading-save-btn">Save</button>
+          </div>
+      </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="Grading-ystem.js"></script>
+</body>
+</html>

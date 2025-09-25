@@ -1,0 +1,445 @@
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #007b7f;
+    z-index: 1000; /* Ensures the header stays on top */
+  }
+  
+  /* Header Left - Buttons */
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .header-btn {
+    padding: 10px;
+    background-color: #c5f6ff;
+    color: #007b7f;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.2s;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+  }
+  
+  .header-btn:hover {
+    background-color: #a4dff3;
+  }
+  
+  .header-btn span.material-icons {
+    font-size: 20px;
+    
+  }
+  
+.link-brows {
+  text-decoration: none;
+  color: #007b7f;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+  /* Profile Icon Container */
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-icon-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  .profile-name {
+    font-size: 16px;
+    color: #333;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    width: 160px;
+    z-index: 9999;
+  }
+  
+  .dropdown-menu a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.2s ease;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown-menu .material-icons {
+    margin-right: 8px;
+    font-size: 18px;
+    color: #007b7f;
+  }
+  
+  /* Show Dropdown on Hover */
+  .profile-icon-container:hover + .dropdown-menu {
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .header {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+  
+    .header-left,
+    .header-right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+  
+  .container {
+    width: 100%;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 20px;   
+}
+
+
+/* Table container */
+.table-container {
+    margin-top:10px;
+}
+
+/* Header style */
+.table-header {
+    display: flex;
+    background-color: #007b7f;
+    font-size: 15px;
+    color: #fff;
+    padding: 10px 0;
+    border-radius: 10px;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.table-header div {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    font-weight: bold;
+}
+
+.buttons-a {
+    border-radius: 10px 0 0 10px;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    font-size: 18px;
+
+
+}
+
+.buttons-b {
+    border-radius: 0 10px 10px 0;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+/* Each student row as a div */
+.student-row {
+    display: flex;
+    padding: 10px 0;
+}
+
+.student-row div {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #d2f8ff;
+}
+
+/* Button styles */
+.button {
+    width: 80px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 10px;
+    margin: 2px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+.button.A {
+    background-color: #b7edfb; /* Green */
+}
+
+.button.B {
+    background-color: #b7edfb; /* Yellow */
+}
+
+.button.C {
+    background-color: #b7edfb; /* Red */
+}
+
+.button.A:hover {
+    background-color: #b7edfb; /* Light green on hover */
+}
+
+.button.B:hover {
+    background-color: #b7edfb; /* Light yellow on hover */
+}
+
+.button.C:hover {
+    background-color: #b7edfb; /* Light red on hover */
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-header,
+.student-row {
+  min-width: 650px;
+}
+
+.tab {
+  background-color: #007b7f;
+  padding: 10px;
+  font-size: 20px;
+  min-width: 300px;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+  margin-right: 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: none;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+
+}
+
+@media (max-width: 768px) {
+  .table-header div,
+  .student-row div {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+
+    /* Use separate border model to create row spacing */
+    table {
+      width: 100%;
+      border-collapse: separate; 
+      border-spacing: 0 10px; /* 10px space between rows */
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+      
+    }
+    
+    thead tr {
+      background-color: #007b7f;
+      color: #fff;
+      border-radius: 8px;
+      
+    }
+    thead th {
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      
+    }
+    .table-header {
+      border-radius: 8px 8px 0 0;
+    }
+    
+    /* Each data row gets a light-blue background and spacing. */
+    tbody tr {
+      background-color: #ccf8ff; /* Light blue row background */
+      border-radius: 8px;
+    }
+    
+    /* Cells with spacing and rounding */
+    tbody td {
+      padding: 12px;
+      font-size: 16px;
+      color: #333;
+      text-align: center;
+      /* border-radius: 8px; */
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    
+    }
+    
+    .gradee{
+      border-radius: 0 8px 8px 0;
+    }
+    
+    /* Button styles inside table cells */
+    .table-btn {
+      display: inline-block;
+      min-width: 40px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      /* You can add transition or hover effects if you like */
+    }
+    
+    .table-btn:hover {
+      opacity: 0.9;
+    }
+    
+    .student-name {
+      font-weight: bold;
+      text-align: left;
+      border-radius: 8px 0 0 8px;
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    
+    }
+    
+    .grade{
+      border-radius: 0 8px 8px 0;
+    }
+    
+    /* Different color classes */
+    .total-questions {
+      background-color: #007b7f;  /* teal */
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    
+    }
+    .correct-questions {
+      background-color: #7ef7c2;  /* green */
+      color: #111;                /* black text for better contrast */
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    
+    }
+    .incorrect-questions {
+      background-color: #ffb3b3;  /* pinkish-red */
+      color: #111;
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    
+    }
+    .skipped-questions {
+      background-color: #ffeb99;  /* yellow */
+      color: #111;
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    
+    }
+    .time-taken,
+    .percentage,
+    .grade {
+      color: #111;
+      font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    
+    }
+    
+    .tab {
+        background-color: #007b7f;
+        padding: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        display: inline-block;
+        margin-right: 25px;
+        border-radius: 12px;
+        cursor: pointer;
+        border: none;
+        font-family: 'Comic Neue', 'Comic Sans MS', cursive;
+    
+    }
+    
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px; /* Slightly smaller base font if desired */
+      }
+    
+      /* Adjust header layout for small screens (buttons or profile might stack) */
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+      }
+      .header-left, .header-right {
+        width: 100%;
+        justify-content: space-between;
+      }
+    
+      /* Table columns can get squeezed, so horizontal scrolling is allowed
+         or you could go further to transform rows into "cards" if you want. */
+      thead th {
+        font-size: 14px;
+        padding: 8px;
+      }
+      tbody td {
+        font-size: 14px;
+        padding: 8px;
+      }
+    
+      /* Buttons get smaller on very narrow screens */
+      .table-btn {
+        min-width: 30px;
+        padding: 4px 8px;
+        font-size: 14px;
+      }
+
+      .accordion-content {
+        border: 1px solid #f9cd98;
+        background-color: #fffdf3;
+        padding: 10px;
+        border-radius: 0px 0px 10px 10px;
+        margin-bottom: 20px;
+        margin-top: -10px;
+        min-width: 640px;  
+      }
+    }
+
+  .accordion-content {
+    border: 1px solid #f9cd98;
+    background-color: #fffdf3;
+    padding: 10px;
+    border-radius: 0px 0px 10px 10px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+  }

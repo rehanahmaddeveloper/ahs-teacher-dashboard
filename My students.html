@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="My students.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="header-left">
+            <button class="header-btn" id="homeBtn" onclick="window.location.href='./index.html';">
+                <span class="material-icons">home</span> Home
+            </button>
+            <button class="header-btn" id="browseBtn">
+               <a class="link-brows" href="./brows.html"><span class="material-icons">apps</span> Browse</a> 
+            </button>
+        </div>
+        
+        <div class="header-right">
+            <!-- Profile Icon and Dropdown Menu -->
+            <div class="profile-icon-container" id="profileDropdown">
+                <img src="images/account profile dp.jpg" alt="Profile" class="profile-icon" />
+                <div class="profile-name">My Account ▼</div>
+                
+                <!-- Dropdown Menu -->
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="./index.html">
+                        <span class="material-icons">dashboard</span> My Dashboard
+                    </a>
+                    <a href="#">
+                        <span class="material-icons">settings</span> Settings
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="container">
+            <div>
+                <button class="tab">Grade 1</button>
+            </div>
+        
+            <div class="table-container">
+                <!-- Table Header as div -->
+                <div class="table-header">
+                    <div>Student Name</div>
+                    <div>Maths</div>
+                    <div>Science</div>
+                    <div>Computer</div>
+                    <div>Social Studies</div>
+                    <div>Arts & Crafts</div>
+                    <div>English Language Arts</div>
+                </div>
+        
+                <!-- Student Rows as divs -->
+                <div class="student-row">
+                    <div class="buttons-a">Ahsan</div>
+                    <div><button class="button A" onclick="toggleAccordion('accordion-1')">A</button></div>
+                    <div><button class="button B" onclick="toggleAccordion('accordion-2')">B</button></div>
+                    <div><button class="button A" onclick="toggleAccordion('accordion-3')">A</button></div>
+                    <div><button class="button C" onclick="toggleAccordion('accordion-4')">C</button></div>
+                    <div><button class="button A" onclick="toggleAccordion('accordion-5')">A</button></div>
+                    <div><button class="button B" onclick="toggleAccordion('accordion-6')">B</button></div>
+                </div>
+        
+                <!-- Accordion Content for each button -->
+                <div id="accordion-1" class="accordion-content">
+                    <div class="accordion-details">
+                        <div class="student-report">
+                            <button class="tab">Living & Non-Living Things</button>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="student-name">Topic Name</th>
+                                        <th>Attempt Date</th>
+                                        <th>Total Questions</th>
+                                        <th>Correct Questions</th>
+                                        <th>Incorrect Questions</th>
+                                        <th>Skipped Questions</th>
+                                        <th>Time Taken</th>
+                                        <th>%</th>
+                                        <th class="gradee">Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="accordion-row table-row">
+                                        <td class="student-name">A1- Living Things</td>
+                                        <td>01-15-2025</td>
+                                        <td><span class="table-btn total-questions">10</span></td>
+                                        <td><span class="table-btn correct-questions">07</span></td>
+                                        <td><span class="table-btn incorrect-questions">03</span></td>
+                                        <td><span class="table-btn skipped-questions">01</span></td>
+                                        <td><span class="table-btn time-taken">20 min</span></td>
+                                        <td><span class="table-btn percentage">70%</span></td>
+                                        <td class="grade"><span class="table-btn grade">B</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion-2" class="accordion-content">
+                    <div class="accordion-details">
+                        <div class="student-report">
+                            <button class="tab">Living & Non-Living Things</button>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="student-name">Topic Name</th>
+                                        <th>Attempt Date</th>
+                                        <th>Total Questions</th>
+                                        <th>Correct Questions</th>
+                                        <th>Incorrect Questions</th>
+                                        <th>Skipped Questions</th>
+                                        <th>Time Taken</th>
+                                        <th>%</th>
+                                        <th class="gradee">Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="accordion-row table-row">
+                                        <td class="student-name">A1- Living Things</td>
+                                        <td>01-15-2025</td>
+                                        <td><span class="table-btn total-questions">10</span></td>
+                                        <td><span class="table-btn correct-questions">07</span></td>
+                                        <td><span class="table-btn incorrect-questions">03</span></td>
+                                        <td><span class="table-btn skipped-questions">01</span></td>
+                                        <td><span class="table-btn time-taken">20 min</span></td>
+                                        <td><span class="table-btn percentage">70%</span></td>
+                                        <td class="grade"><span class="table-btn grade">B</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion-3" class="accordion-content">
+                    <div class="accordion-details">
+                        <div class="student-report">
+                            <button class="tab">Living & Non-Living Things</button>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="student-name">Topic Name</th>
+                                        <th>Attempt Date</th>
+                                        <th>Total Questions</th>
+                                        <th>Correct Questions</th>
+                                        <th>Incorrect Questions</th>
+                                        <th>Skipped Questions</th>
+                                        <th>Time Taken</th>
+                                        <th>%</th>
+                                        <th class="gradee">Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="accordion-row table-row">
+                                        <td class="student-name">A1- Living Things</td>
+                                        <td>01-15-2025</td>
+                                        <td><span class="table-btn total-questions">10</span></td>
+                                        <td><span class="table-btn correct-questions">07</span></td>
+                                        <td><span class="table-btn incorrect-questions">03</span></td>
+                                        <td><span class="table-btn skipped-questions">01</span></td>
+                                        <td><span class="table-btn time-taken">20 min</span></td>
+                                        <td><span class="table-btn percentage">70%</span></td>
+                                        <td class="grade"><span class="table-btn grade">B</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion-4" class="accordion-content">
+                    <div class="accordion-details">
+                        <div class="student-report">
+                            <button class="tab">Living & Non-Living Things</button>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="student-name">Topic Name</th>
+                                        <th>Attempt Date</th>
+                                        <th>Total Questions</th>
+                                        <th>Correct Questions</th>
+                                        <th>Incorrect Questions</th>
+                                        <th>Skipped Questions</th>
+                                        <th>Time Taken</th>
+                                        <th>%</th>
+                                        <th class="gradee">Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="accordion-row table-row">
+                                        <td class="student-name">A1- Living Things</td>
+                                        <td>01-15-2025</td>
+                                        <td><span class="table-btn total-questions">10</span></td>
+                                        <td><span class="table-btn correct-questions">07</span></td>
+                                        <td><span class="table-btn incorrect-questions">03</span></td>
+                                        <td><span class="table-btn skipped-questions">01</span></td>
+                                        <td><span class="table-btn time-taken">20 min</span></td>
+                                        <td><span class="table-btn percentage">70%</span></td>
+                                        <td class="grade"><span class="table-btn grade">B</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion-5" class="accordion-content">
+                    <div class="accordion-details">
+                        <div class="student-report">
+                            <button class="tab">Living & Non-Living Things</button>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="student-name">Topic Name</th>
+                                        <th>Attempt Date</th>
+                                        <th>Total Questions</th>
+                                        <th>Correct Questions</th>
+                                        <th>Incorrect Questions</th>
+                                        <th>Skipped Questions</th>
+                                        <th>Time Taken</th>
+                                        <th>%</th>
+                                        <th class="gradee">Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="accordion-row table-row">
+                                        <td class="student-name">A1- Living Things</td>
+                                        <td>01-15-2025</td>
+                                        <td><span class="table-btn total-questions">10</span></td>
+                                        <td><span class="table-btn correct-questions">07</span></td>
+                                        <td><span class="table-btn incorrect-questions">03</span></td>
+                                        <td><span class="table-btn skipped-questions">01</span></td>
+                                        <td><span class="table-btn time-taken">20 min</span></td>
+                                        <td><span class="table-btn percentage">70%</span></td>
+                                        <td class="grade"><span class="table-btn grade">B</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div id="accordion-6" class="accordion-content">
+                    <div class="accordion-details">
+                        <div class="student-report">
+                            <button class="tab">Living & Non-Living Things</button>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="student-name">Topic Name</th>
+                                        <th>Attempt Date</th>
+                                        <th>Total Questions</th>
+                                        <th>Correct Questions</th>
+                                        <th>Incorrect Questions</th>
+                                        <th>Skipped Questions</th>
+                                        <th>Time Taken</th>
+                                        <th>%</th>
+                                        <th class="gradee">Grade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="accordion-row table-row">
+                                        <td class="student-name">A1- Living Things</td>
+                                        <td>01-15-2025</td>
+                                        <td><span class="table-btn total-questions">10</span></td>
+                                        <td><span class="table-btn correct-questions">07</span></td>
+                                        <td><span class="table-btn incorrect-questions">03</span></td>
+                                        <td><span class="table-btn skipped-questions">01</span></td>
+                                        <td><span class="table-btn time-taken">20 min</span></td>
+                                        <td><span class="table-btn percentage">70%</span></td>
+                                        <td class="grade"><span class="table-btn grade">B</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <script src="My students.js"></script>
+</body>
+</html>

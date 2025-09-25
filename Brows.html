@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Page</title>
+  <link rel="stylesheet" href="browse.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+ 
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="header-left">
+        <button class="header-btn" id="homeBtn" onclick="window.location.href='./index.html';">
+            <span class="material-icons">home</span> Home
+          </button>
+      <button class="header-btn" id="browseBtn">
+        <span class="material-icons">apps</span> Browse
+      </button>
+    </div>
+    
+    <div class="header-right">
+      <!-- Profile Icon and Dropdown Menu -->
+      <div class="profile-icon-container" id="profileDropdown">
+        <img src="images/account profile dp.jpg" alt="Profile" class="profile-icon" />
+        <div class="profile-name">My Account ▼</div>
+        
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="./index.html">
+            <span class="material-icons">dashboard</span> My Dashboard
+          </a>
+          <a href="#">
+            <span class="material-icons">settings</span> Settings
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <button class="toggle-btn" onclick="toggleSidebar()">☰</button> 
+  <!-- The button that appears on mobile to open/close the sidebar -->
+  
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-item">
+      <span class="material-icons">calendar_today</span>
+      <span class="sidebar-item-text">Add Schedule</span>
+    </div>
+    <div class="sidebar-item">
+      <span class="material-icons">bar_chart</span>
+      <a class="grading-system-t" href="./Grading-system.html"><span class="sidebar-item-text">Grading System</span></a>
+    </div>
+    <a style="text-decoration: none;" href="./My students.html">
+      <div class="sidebar-item">
+        <span class="material-icons">people</span>
+        <span class="sidebar-item-text">My Students</span>
+      </div>
+    </a>
+  </div>
+
+<!-- Main Content Area (Right Side) -->
+<main class="right-section">
+    <!-- Add Schedule Section -->
+    <div class="add-schedule-section">
+      
+      <!-- Row 1: Title + Plus Icon -->
+      <div class="title-plus">
+        <h2 class="add-schedule-title">Add Schedule</h2>
+        <button class="add-icon">+</button>
+      </div>
+  
+      <!-- Row 2: Two Select Fields (50% each) -->
+      <div class="filters-row">
+        <select class="filter-dropdown">
+          <option>Grade</option>
+          <option>Grade 1</option>
+          <option>Grade 2</option>
+          <option>Grade 3</option>
+        </select>
+        <select class="filter-dropdown">
+          <option>Subject</option>
+          <option>General Science</option>
+          <option>Mathematics</option>
+          <option>Social Studies</option>
+        </select>
+      </div>
+  
+    </div>
+  
+  
+
+    <div class="container">
+      <div class="section" id="A">
+          <h2 class="section-title">A. Living and Non-Living Things</h2>
+          <div class="card">
+              <div class="row">
+                  <span>A1_Living Things</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <span>A2_Non-Living Things</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <span>A3_Identify Living things and Non-Living</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <span>A4_Needs of Plants</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <span>A5_Needs of Animals</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <span>A6_Living Things Vs Non-Living Objects</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+          </div>
+          
+      </div>
+
+      
+
+      <!-- Repeat the same structure for sections B, C, D -->
+      <!-- B: Plants -->
+      <div class="section" id="B">
+          <h2 class="section-title">C. Animals</h2>
+          <div class="card">
+              <div class="row">
+                  <span>C1_Parts of Animals</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <span>C2_Parents of Animals</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <span>C4_Dromedary Camels and Polar Bears</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <span>C5_Giraffes and Beavers</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <span>C6_Whale Sharks and Tree Frogs</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              <div class="row">
+                  <span>C7_The Five Senses</span>
+                  <div class="buttons">
+                      <button class="due-btn">Date ▼</button>
+                      <button class="open-btn" onclick="openModal()">Assign</button>
+                      <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                  </div>
+              </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Repeat similarly for Sections C and D -->
+  </div>
+  <div class="container">
+    <div class="section" id="A">
+        <h2 class="section-title">B. Plants</h2>
+        <div class="card">
+            <div class="row">
+                <span>B1_Parts of Plants</span>
+                <div class="buttons">
+                    <button class="due-btn">Date ▼</button>
+                    <button class="open-btn" onclick="openModal()">Assign</button>
+                    <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+            </div>
+            <div class="row">
+                <span>B2_Functions of Plant Parts</span>
+                <div class="buttons">
+                    <button class="due-btn">Date ▼</button>
+                    <button class="open-btn" onclick="openModal()">Assign</button>
+                    <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+            </div>
+            <div class="row">
+                <span>B3_Parents of Plants</span>
+                <div class="buttons">
+                    <button class="due-btn">Date ▼</button>
+                    <button class="open-btn" onclick="openModal()">Assign</button>
+                    <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+            </div>
+            <div class="row">
+                <span>B4_Water Lilies and Saguaros</span>
+                <div class="buttons">
+                    <button class="due-btn">Date ▼</button>
+                    <button class="open-btn" onclick="openModal()">Assign</button>
+                    <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+            </div>
+            <div class="row">
+                <span>B5_Bareberries and Powdery Strap</span>
+                <div class="buttons">
+                    <button class="due-btn">Date ▼</button>
+                    <button class="open-btn" onclick="openModal()">Assign</button>
+                    <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+            </div>
+            <div class="row">
+                <span>B6_Turtle Grass and Giant Sequoias</span>
+                <div class="buttons">
+                    <button class="due-btn">Date ▼</button>
+                    <button class="open-btn" onclick="openModal()">Assign</button>
+                    <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+            </div>
+            <div class="row">
+              <span>C3_Wild and Domestic Animals</span>
+              <div class="buttons">
+                  <button class="due-btn">Date ▼</button>
+                  <button class="open-btn" onclick="openModal()">Assign</button>
+                  <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+          </div>
+        </div>
+    </div>
+    <div class="section" id="B">
+      <h2 class="section-title">D_Seasons and Weather
+      </h2>
+      <div class="card">
+          <div class="row">
+              <span>D1_The Four Seasons</span>
+              <div class="buttons">
+                  <button class="due-btn">Date ▼</button>
+                  <button class="open-btn" onclick="openModal()">Assign</button>
+                  <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+          </div>
+          <div class="row">
+              <span>D2_Basic Weather Conditions</span>
+              <div class="buttons">
+                  <button class="due-btn">Date ▼</button>
+                  <button class="open-btn" onclick="openModal()">Assign</button>
+                  <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+          </div>
+          <div class="row">
+              <span>D3_Hot and Cold</span>
+              <div class="buttons">
+                  <button class="due-btn">Date ▼</button>
+                  <button class="open-btn" onclick="openModal()">Assign</button>
+                  <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+          </div>
+          <div class="row">
+              <span>D4_Basic Weather Symbols</span>
+              <div class="buttons">
+                  <button class="due-btn">Date ▼</button>
+                  <button class="open-btn" onclick="openModal()">Assign</button>
+                  <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+          </div>
+          <div class="row">
+              <span>D5_Types of Precipitation</span>
+              <div class="buttons">
+                  <button class="due-btn">Date ▼</button>
+                  <button class="open-btn" onclick="openModal()">Assign</button>
+                  <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+          </div>
+          <div class="row">
+              <span>D6_Weather Patterns</span>
+              <div class="buttons">
+                  <button class="due-btn">Date ▼</button>
+                  <button class="open-btn" onclick="openModal()">Assign</button>
+                  <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+          </div>
+          <div class="row">
+              <span>D7_Blizzards</span>
+              <div class="buttons">
+                  <button class="due-btn">Date ▼</button>
+                  <button class="open-btn" onclick="openModal()">Assign</button>
+                  <button class="report-btn" onclick="window.location.href='./Report.html';">Report</button>
+                </div>
+          </div>
+      </div>
+  </div>
+ 
+  <!-- Calendar Popup (no Bootstrap) -->
+  <div id="dueDateModal" class="calendar-modal">
+    <div class="calendar-modal-content">
+      <!-- Header with Month/Year -->
+      <div class="calendar-header">
+        <h2 class="calendar-month-year">February 2025</h2>
+        <!-- Red circular close button -->
+        <button type="button" class="calendar-close-btn" aria-label="Close">×</button>
+      </div>  
+        
+  </main>
+
+ <!-- The Modal -->
+ <div id="studentModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <h2 class="modal-title">Select Students</h2>
+        <div class="select-all">
+            <label for="selectAll">Select All</label>
+            <input type="checkbox" id="selectAll" onclick="toggleSelectAll()">
+        </div>
+        <div class="student-list">
+            <div class="student">
+                <img src="demo student profile images/student 1.jpg" alt="Curio, Mario">
+                <span>Curio, Mario</span>
+                <input type="checkbox">
+            </div>
+            <div class="student">
+                <img src="demo student profile images/student 2.jpg" alt="Einstein, Albert">
+                <span>Einstein, Albert</span>
+                <input type="checkbox">
+            </div>
+            <div class="student">
+                <img src="demo student profile images/student 3.jpg" alt="Hawking, Stophon">
+                <span>Hawking, Stophon</span>
+                <input type="checkbox">
+            </div>
+            <div class="student">
+                <img src="demo student profile images/student 4.jpg" alt="Jamison, Mao">
+                <span>Jamison, Mao</span>
+                <input type="checkbox">
+            </div>
+            <div class="student">
+                <img src="demo student profile images/student 1.jpg" alt="Johnson, Katherine">
+                <span>Johnson, Katherine</span>
+                <input type="checkbox">
+            </div>
+            <div class="student">
+                <img src="demo student profile images/student 2.jpg" alt="Maynard Daly, Mario">
+                <span>Maynard Daly, Mario</span>
+                <input type="checkbox">
+            </div>
+            <div class="student">
+                <img src="demo student profile images/student 3.jpg" alt="Newton, Isaac">
+                <span>Newton, Isaac</span>
+                <input type="checkbox">
+            </div>
+            <div class="student">
+                <img src="demo student profile images/student 4.jpg" alt="Sagan, Cari">
+                <span>Sagan, Cari</span>
+                <input type="checkbox">
+            </div>
+        </div>
+        <button class="save-btn" onclick="saveSelection()">Save</button>
+    </div>
+</div>
+
+
+  <script src="browse.js"></script>
+</body>
+</html>

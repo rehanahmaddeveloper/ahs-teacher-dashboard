@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Interface-II</title>
+    <link rel="stylesheet" href="Home.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header Section -->
+  <header class="header">
+    <div class="header-left">
+        <button class="header-btn" id="homeBtn" onclick="window.location.href='./index.html';">
+            <span class="material-icons">home</span> Home
+          </button>
+      <button class="header-btn" id="browseBtn">
+        <span class="material-icons">apps</span> Browse
+      </button>
+    </div>
+    
+    <div class="header-right">
+      <!-- Profile Icon and Dropdown Menu -->
+      <div class="profile-icon-container" id="profileDropdown">
+        <img src="images/account profile dp.jpg" alt="Profile" class="profile-icon" />
+        <div class="profile-name">My Account ▼</div>
+        
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="./index.html">
+            <span class="material-icons">dashboard</span> My Dashboard
+          </a>
+          <a href="#">
+            <span class="material-icons">settings</span> Settings
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="grade-rows">
+    <!-- Row 1 -->
+    <div class="grade-row">
+      <div class="grade-box grade1-bg">
+        <h3>Elementary Grade 1</h3>
+        <div class="grade-content">
+          <img src="images/AHS First Layout.png" alt="Grade 1" class="grade-img" />
+          <p>At AHSEdu.Org, first grade students focus on building foundational skills in reading, writing, and mathematics through hands-on learning.</p>
+          <!-- Title and button replacing list -->
+          <h4>General Mathematics I (120 Topics)</h4>
+          <a href="#" class="view-all-btn-r1">View All Topics</a>
+        </div>
+      </div>
+  
+      <!-- Grade 2 -->
+      <div class="grade-box grade2-bg">
+        <h3>Elementary Grade 2</h3>
+        <div class="grade-content">
+          <img src="images/AHS First Layout (1).png" alt="Grade 2" class="grade-img" />
+          <p>At AHSEdu.Org, second graders continue to expand their knowledge in various subjects. Also, work on developing critical thinking and problem-solving skills.</p>
+          <!-- Title and button replacing list -->
+          <h4>General Mathematics II (180 Topics)</h4>
+          <a href="#" class="view-all-btn-r2">View All Topics</a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Row 2 -->
+    <div class="grade-row">
+      <div class="grade-box grade3-bg">
+        <h3>Elementary Grade 3</h3>
+        <div class="grade-content">
+          <img src="images/AHS First Layout (2).png" alt="Grade 3" class="grade-img" />
+          <p>Third-grade students further refine their reading and writing skills, begin to explore more complex mathematical concepts, and learn about different cultures in social studies.</p>
+          <!-- Title and button replacing list -->
+          <h4>General Mathematics III (120 Topics)</h4>
+          <a href="#" class="view-all-btn-r3">View All Topics</a>
+        </div>
+      </div>
+  
+      <!-- Grade 4 -->
+      <div class="grade-box grade4-bg">
+        <h3>Elementary Grade 4</h3>
+        <div class="grade-content">
+          <img src="images/AHS First Layout (3).png" alt="Grade 4" class="grade-img" />
+          <p>Fourth grade is a time for AHSEdu.Org students to deepen their understanding of science and history, and begin to work more independently on projects and assignments.</p>
+          <!-- Title and button replacing list -->
+          <h4>General Mathematics IV (180 Topics)</h4>
+          <a href="#" class="view-all-btn-r4">View All Topics</a>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Row 3 -->
+    <div class="grade-row center-row">
+      <div class="grade-box grade5-bg">
+        <h3>Elementary Grade 5</h3>
+        <div class="grade-content">
+          <img src="images/AHS First Layout (4).png" alt="Grade 5" class="grade-img" />
+          <p>In fifth grade, students are challenged to think critically, work collaboratively, and demonstrate mastery of their skills in preparation for middle school.</p>
+          <!-- Title and button replacing list -->
+          <h4>General Mathematics V (120 Topics)</h4>
+          <a href="#" class="view-all-btn-r5">View All Topics</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+  <script src="Home.js"></script>
+</body>
+</html>
